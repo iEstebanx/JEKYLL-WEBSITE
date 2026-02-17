@@ -1,0 +1,36 @@
+title: "My Jekyll Tailwind Site"
+description: "Static site built with Jekyll + Tailwind"
+baseurl: ""
+url: ""
+
+collections:
+  blog:
+    output: true
+    permalink: /blog/:name/
+
+#Allowed future posts
+future: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+  - scope:
+      path: ""
+      type: "blog"
+    values:
+      layout: "post"
+
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-admin
+
+jekyll_admin:
+  mount_point: "/admin"

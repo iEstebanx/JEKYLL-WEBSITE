@@ -1,0 +1,32 @@
+<header class="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/70 backdrop-blur">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <a class="group inline-flex items-center gap-2" href="{{ '/' | relative_url }}">
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/15">
+        <!-- simple logo dot -->
+        <span class="h-2.5 w-2.5 rounded-full bg-gradient-to-tr from-fuchsia-400 to-cyan-300"></span>
+      </span>
+      <span class="text-sm font-semibold tracking-wide text-white/90 group-hover:text-white">
+        {{ site.title }}
+      </span>
+    </a>
+
+    <nav class="flex items-center gap-2 text-sm">
+      {% assign path = page.url | default: "/" %}
+
+      <a
+        class="rounded-lg px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white {% if path == '/' %}bg-white/10 text-white{% endif %}"
+        href="{{ '/' | relative_url }}"
+      >Home</a>
+
+      <a
+        class="rounded-lg px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white {% if path contains '/blog' %}bg-white/10 text-white{% endif %}"
+        href="{{ '/blog/' | relative_url }}"
+      >Blog</a>
+
+      <a
+        class="rounded-lg px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white"
+        href="{{ '/admin/' | relative_url }}"
+      >Admin</a>
+    </nav>
+  </div>
+</header>
